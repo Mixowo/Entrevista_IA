@@ -110,7 +110,7 @@ if len(st.session_state.messages) == 0 and not st.session_state.interview_comple
     
     try:
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.8-flash",
             contents=prompt_inicial,
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_INSTRUCTION_BASE + f"\nRol evaluado: {st.session_state.role}",
