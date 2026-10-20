@@ -163,7 +163,7 @@ if not st.session_state.interview_completed:
                 with st.spinner("Líder técnico evaluando y formulando pregunta..."):
                     try:
                         res = client.models.generate_content(
-                            model="gemini-2.5-flash",
+                            model="gemini-3.8-flash",
                             contents=contents_payload,
                             config=types.GenerateContentConfig(
                                 system_instruction=SYSTEM_INSTRUCTION_BASE + f"\nRol evaluado: {st.session_state.role}",
@@ -201,7 +201,7 @@ if not st.session_state.interview_completed:
                 with st.spinner("Procesando evaluación final del candidato..."):
                     try:
                         res_report = client.models.generate_content(
-                            model="gemini-2.5-flash",
+                            model="gemini-3.8-flash",
                             contents=contents_payload,
                             config=types.GenerateContentConfig(
                                 system_instruction=SYSTEM_INSTRUCTION_BASE,
